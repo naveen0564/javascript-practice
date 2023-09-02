@@ -83,14 +83,13 @@ function bSearch(arra, low, high, ele) {
 
 //Find the Array Permutation having sum of elements at odd indices greater than sum of elements at even indices
 
-const input = [123, 45, 67, 89, 60, 33 ];
+const input = [123, 45, 67, 89, 60, 33];
 findArrayPermutation(
   input.sort((a, b) => a - b),
   input.length
 );
 
 function findArrayPermutation(input, length) {
-
   let j = length - 1;
   let i = 0;
   while (i <= j) {
@@ -105,12 +104,46 @@ function findArrayPermutation(input, length) {
   }
 }
 // Given an array Arr[] of size N. Find the number of subarrays whose sum is an even number.
-console.log("From here")
+console.log('From here');
 
 let subArray = [1, 2, 2, 3, 4, 1];
 
-let prefixSum=new Array(subArray.length).fill(0);
+let prefixSum = new Array(subArray.length).fill(0);
 prefixSum[0] = subArray[0];
-for(let i=1;i <subArray.length;i++){
-  prefixSum[i] = prefixSum[i-1] + subArray[i];
+for (let i = 1; i < subArray.length; i++) {
+  prefixSum[i] = prefixSum[i - 1] + subArray[i];
 }
+
+// Given an array arr[ ] of size N, the task for each array element is to print the nearest perfect square having same parity.
+
+const inout = [6, 3, 2, 15];
+const inputLenght = inout.length;
+console.log(inout);
+for (let i = 0; i < inputLenght; i++) {
+  let sr = Math.floor(Math.sqrt(inout[i]));
+  if ((sr & 1) == (inout[i] & 1)) {
+    console.log(sr * sr);
+  } else {
+    sr++;
+    console.log(sr * sr);
+  }
+}
+
+// const ps =[];
+// for(let i=1; i<=inputLenght;i++){
+//   ps.push(i*i)
+// }
+// console.log(ps);
+
+// for(let i=0; i<=inputLenght;i++){
+//   console.log(findPefectSqaure(inout, ps, input[i], i, 0,4))
+// }
+
+// function findPefectSqaure(input, ps, value, index, low, high) {
+//   while(low<=high){
+//     const mid = Math.floor((low+high)/2);
+//     if(ps[mid] ){
+
+//     }
+//   }
+// }
