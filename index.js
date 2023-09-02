@@ -104,3 +104,13 @@ function findArrayPermutation(input, length) {
     }
   }
 }
+// Given an array Arr[] of size N. Find the number of subarrays whose sum is an even number.
+console.log("From here")
+
+let subArray = [1, 2, 2, 3, 4, 1];
+
+let prefixSum=new Array(subArray.length).fill(0);
+prefixSum[0] = subArray[0];
+for(let i=1;i <subArray.length;i++){
+  prefixSum[i] = prefixSum[i-1] + subArray[i];
+}
