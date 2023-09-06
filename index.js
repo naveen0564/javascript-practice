@@ -147,3 +147,15 @@ for (let i = 0; i < inputLenght; i++) {
 //     }
 //   }
 // }
+
+//Given an array arr[] consisting of N integers, the task is to find the number of pairs (i, j) whose sum of indices is the same as the sum elements at the indices.
+
+const sumIndex =  [0, 1, 7, 4, 3, 2]; 
+
+for(i =0; i< sumIndex.length;i++){
+  for(j=0; j< sumIndex.length; j++){
+    if(sumIndex[i]+sumIndex[j] === i+j){
+        console.lo(i,j);
+    }
+  }
+}
