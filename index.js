@@ -190,57 +190,79 @@
 //   }
 // }
 
-// console.log(odd.concat(even));
+// // console.log(odd.concat(even));
 
-//3. Maximum and minimum of an array using the tournament method:
+// //3. Maximum and minimum of an array using the tournament method:
 
-class MinMaxPair {
-  constructor() {
-    this.min = -1;
-    this.max = 999999;
+// class MinMaxPair {
+//   constructor() {
+//     this.min = -1;
+//     this.max = 999999;
+//   }
+// }
+// var arr = [1000, 11, 445, 1, 330, 3000];
+// console.log(arr);
+// minMax(arr, 0, arr.length);
+
+// function minMax(arr, low, high) {
+//   let minmax = new MinMaxPair();
+//   let mn = new MinMaxPair();
+//   let mx = new MinMaxPair();
+
+//   if (arr.length === 1) {
+//     minmax.min = arr[0];
+//     minmax.max = arr[0];
+//     return minMax;
+//   }
+//   if (arr.length === 2) {
+//     if (arr[0] > arr[1]) {
+//       minmax.max = arr[0];
+//       minmax.min = arr[1];
+//     } else {
+//       minmax.max = arr[0];
+//       minmax.min = arr[1];
+//     }
+
+//     return minmax;
+//   }
+
+//   let mid = parseInt((low + high) / 2);
+//   mn = minMax(arr, low, mid);
+//   mx = minMax(arr, mid + 1, high);
+
+//   if (mn.min > mx.min) {
+//     minMax.min = mx.min;
+//   } else {
+//     minMax.min = mn.min;
+//   }
+
+//   if (mn.max > mx.max) {
+//     minMax.max = mn.max;
+//   } else {
+//     minMax.max = mx.max;
+//   }
+
+//   return minMax;
+// }
+
+// Counting frequencies of array elements
+
+const arr = [10, 20, 20, 10, 10, 20, 5, 20];
+const hashMap = new Map();
+
+for(let i=0;i<arr.length;i++){
+  if(hashMap.has(arr[i])){
+    const index = hashMap.get(arr[i]);
+    hashMap.set(arr[i],index+1);
+  } else{
+    hashMap.set(arr[i], 1);
   }
 }
-var arr = [1000, 11, 445, 1, 330, 3000];
-console.log(arr);
-minMax(arr, 0, arr.length);
 
-function minMax(arr, low, high) {
-  let minmax = new MinMaxPair();
-  let mn = new MinMaxPair();
-  let mx = new MinMaxPair();
+for (const [key, value] of hashMap) {
+  console.log(`${key} = ${value}`);
+}
 
-  if (arr.length === 1) {
-    minmax.min = arr[0];
-    minmax.max = arr[0];
-    return minMax;
-  }
-  if (arr.length === 2) {
-    if (arr[0] > arr[1]) {
-      minmax.max = arr[0];
-      minmax.min = arr[1];
-    } else {
-      minmax.max = arr[0];
-      minmax.min = arr[1];
-    }
-
-    return minmax;
-  }
-
-  let mid = parseInt((low + high) / 2);
-  mn = minMax(arr, low, mid);
-  mx = minMax(arr, mid + 1, high);
-
-  if (mn.min > mx.min) {
-    minMax.min = mx.min;
-  } else {
-    minMax.min = mn.min;
-  }
-
-  if (mn.max > mx.max) {
-    minMax.max = mn.max;
-  } else {
-    minMax.max = mx.max;
-  }
-
-  return minMax;
+for( const [key, value] of hashMap.entries()){
+  console.log(`${key} = ${value}`);
 }
