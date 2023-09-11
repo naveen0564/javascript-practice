@@ -250,11 +250,11 @@
 const arr = [10, 20, 20, 10, 10, 20, 5, 20];
 const hashMap = new Map();
 
-for(let i=0;i<arr.length;i++){
-  if(hashMap.has(arr[i])){
+for (let i = 0; i < arr.length; i++) {
+  if (hashMap.has(arr[i])) {
     const index = hashMap.get(arr[i]);
-    hashMap.set(arr[i],index+1);
-  } else{
+    hashMap.set(arr[i], index + 1);
+  } else {
     hashMap.set(arr[i], 1);
   }
 }
@@ -263,6 +263,25 @@ for (const [key, value] of hashMap) {
   console.log(`${key} = ${value}`);
 }
 
-for( const [key, value] of hashMap.entries()){
+for (const [key, value] of hashMap.entries()) {
   console.log(`${key} = ${value}`);
 }
+
+// Equilibrium index of an array using Prefix-Sum:
+
+const val = [-7, 1, 5, 2, -4, 3, 0];
+
+let leftSum = [val[0]];
+
+for (let i = 1; i < val.length; i++) {
+  leftSum[i] = leftSum[i - 1] + val[i];
+}
+console.log(leftSum);
+
+let rightSum = [val[val.length - 1]];
+
+for (let i = val.length; i >= 0; i++) {
+  rightSum[i] = rightSum[i - 1] + val[i];
+}
+
+console.log(rightSum);
